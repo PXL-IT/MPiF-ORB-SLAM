@@ -36,6 +36,7 @@
 #include"ORBextractor.h"
 #include "Initializer.h"
 #include "MapPublisher.h"
+#include "geometry_msgs/PoseStamped.h"
 
 #include<tf/transform_broadcaster.h>
 
@@ -180,6 +181,10 @@ protected:
 
     // Transfor broadcaster (for visualization in rviz)
     tf::TransformBroadcaster mTfBr;
+
+    // Pose broadcaster
+    ros::NodeHandle n;
+    ros::Publisher PosPub;
 };
 
 } //namespace ORB_SLAM

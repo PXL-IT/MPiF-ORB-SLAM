@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5092ca65-e598-4338-a148-320748d96ec5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/FramePublisher.h" afterPath="$PROJECT_DIR$/include/FramePublisher.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FramePublisher.cc" afterPath="$PROJECT_DIR$/src/FramePublisher.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Tracking.h" afterPath="$PROJECT_DIR$/include/Tracking.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tracking.cc" afterPath="$PROJECT_DIR$/src/Tracking.cc" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +25,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FramePublisher.cc" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FramePublisher.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FramePublisher.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+            <state relative-caret-position="319">
+              <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tracking.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/Tracking.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tracking.cc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Tracking.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="324" column="48" lean-forward="true" selection-start-line="324" selection-start-column="48" selection-end-line="324" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -59,6 +80,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/FramePublisher.cc" />
         <option value="$PROJECT_DIR$/include/FramePublisher.h" />
+        <option value="$PROJECT_DIR$/include/Tracking.h" />
+        <option value="$PROJECT_DIR$/src/Tracking.cc" />
       </list>
     </option>
   </component>
@@ -335,12 +358,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496063024453</updated>
-      <workItem from="1496063025779" duration="758000" />
+      <workItem from="1496063025779" duration="1322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="758000" />
+    <option name="totallyTimeSpent" value="1322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2945" y="-4" width="1375" height="904" extended-state="6" />
@@ -387,8 +410,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FramePublisher.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state relative-caret-position="319">
+          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Tracking.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tracking.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="324" column="48" lean-forward="true" selection-start-line="324" selection-start-column="48" selection-end-line="324" selection-end-column="48" />
           <folding />
         </state>
       </provider>
