@@ -84,6 +84,7 @@ public:
     std::vector<int> mvIniMatches;
     std::vector<cv::Point2f> mvbPrevMatched;
     std::vector<cv::Point3f> mvIniP3D;
+    geometry_msgs::PoseStamped poseMSG;
     Frame mInitialFrame;
 
 

@@ -24,6 +24,7 @@
 #include "Tracking.h"
 #include "MapPoint.h"
 #include "Map.h"
+#include <visualization_msgs/Marker.h>
 
 #include "ros/ros.h"
 
