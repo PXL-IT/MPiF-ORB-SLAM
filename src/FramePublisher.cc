@@ -38,6 +38,7 @@ FramePublisher::FramePublisher()
     mbUpdated = true;
 
     mImagePub = mNH.advertise<sensor_msgs::Image>("ORB_SLAM/Frame",10,true);
+    mCurrPointsPub = mNH.advertise<visualization_msgs::Marker>("ORB_SLAM/FocusVision/frame_map", 10);
 
     PublishFrame();
 }
@@ -128,6 +129,14 @@ cv::Mat FramePublisher::DrawFrame()
                     cv::rectangle(im,pt1,pt2,cv::Scalar(0,255,0));
                     cv::circle(im,vCurrentKeys[i].pt,2,cv::Scalar(0,255,0),-1);
                     mnTracked++;
+
+                    geometry_msgs::Point p;
+                    cv::Mat pos = vMatchedMapPoints[i]->GetWorldPos();
+                    p.x=pos.at<float>(0);
+                    p.y=pos.at<float>(1);
+                    p.z=pos.at<float>(2);
+
+                    mPoints.points.push_back(p);
                 }
             }
         }
@@ -147,6 +156,11 @@ void FramePublisher::PublishFrame()
     rosImage.image = im.clone();
     rosImage.header.stamp = ros::Time::now();
     rosImage.encoding = "bgr8";
+
+    mImagePub.publish(rosImage.toImageMsg());
+    mCurrPointsPub.publish(mPoints);
+
+    mPoints.points.clear();
 
     mImagePub.publish(rosImage.toImageMsg());
     ros::spinOnce();
