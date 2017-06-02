@@ -1,7 +1,12 @@
 
-##Check out our new [ORB-SLAM2](https://github.com/raulmur/ORB_SLAM2) (Monocular, Stereo and RGB-D)
----
 # ORB-SLAM Monocular
+
+This is a modified version of ORB-SLAM. The additional features contain:
+- Publishing of camera pose
+- Publishing of the current map points in the frame
+- Custom launch file for use in combination of our AutoPilot in Gazebo
+- Custom launch file for use in combination of our AutoPilot with real UAV's
+
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
 
 **Current version:** 1.0.1 (see [Changelog.md](https://github.com/raulmur/ORB_SLAM/blob/master/Changelog.md))
@@ -71,7 +76,7 @@ We make use of some components of the DBoW2 and DLib library (see original at ht
 
 2. Clone the repository:
 
-		git clone https://github.com/raulmur/ORB_SLAM.git ORB_SLAM
+		git clone https://github.com/PXL-IT/MPiF-ORB-SLAM.git ORB_SLAM
 		
 3. Add the path where you cloned ORB-SLAM to the `ROS_PACKAGE_PATH` environment variable. To do this, modify your .bashrc and add at the bottom the following line (replace PATH_TO_PARENT_OF_ORB_SLAM):
 
@@ -109,67 +114,19 @@ We make use of some components of the DBoW2 and DLib library (see original at ht
 
 #4. Usage
 
-**See section 5 to run the Example Sequence**.
-
-1. Launch ORB-SLAM from the terminal (`roscore` should have been already executed):
-
-		rosrun ORB_SLAM ORB_SLAM PATH_TO_VOCABULARY PATH_TO_SETTINGS_FILE
-
-  You have to provide the path to the ORB vocabulary and to the settings file. The paths must be absolute or relative   to the ORB_SLAM directory.  
-  We already provide the vocabulary file we use in `ORB_SLAM/Data/ORBvoc.txt.tar.gz`. Uncompress the file, as it will be loaded much faster.
-
-2. The last processed frame is published to the topic `/ORB_SLAM/Frame`. You can visualize it using `image_view`:
-
-		rosrun image_view image_view image:=/ORB_SLAM/Frame _autosize:=true
-
-3. The map is published to the topic `/ORB_SLAM/Map`, the current camera pose and global world coordinate origin are sent through `/tf` in frames `/ORB_SLAM/Camera` and `/ORB_SLAM/World` respectively.  Run `rviz` to visualize the map:
-	
-	*in ROS Fuerte*:
-
-		rosrun rviz rviz -d Data/rviz.vcg
-
-	*in ROS Groovy or a newer version*:
-
-		rosrun rviz rviz -d Data/rviz.rviz
-
-4. ORB_SLAM will receive the images from the topic `/camera/image_raw`. You can now play your rosbag or start your camera node. 
+1. ORB_SLAM will receive the images from the topic `/camera/image_raw`. You can now play your rosbag or start your camera node. 
 If you have a sequence with individual image files, you will need to generate a bag from them. We provide a tool to do that: https://github.com/raulmur/BagFromImages.
 
 
 **Tip: Use a roslaunch to launch `ORB_SLAM`, `image_view` and `rviz` from just one instruction. We provide an example**:
 
-*in ROS Fuerte*:
+*Using Gazebo*:
 
-	roslaunch ExampleFuerte.launch
+	roslaunch orb_slam_gazebo.launch
 
-*in ROS Groovy or a newer version*:
+*Using an UAV*:
 
-	roslaunch ExampleGroovyOrNewer.launch
-
-
-#5. Example Sequence
-We provide the settings and the rosbag of an example sequence in our lab. In this sequence you will see a loop closure and two relocalisation from a big viewpoint change.
-
-1. Download the rosbag file:  
-	http://webdiis.unizar.es/~raulmur/orbslam/downloads/Example.bag.tar.gz. 
-
-	Alternative link: https://drive.google.com/file/d/0B8Qa2__-sGYgRmozQ21oRHhUZWM/view?usp=sharing
-
-	Uncompress the file.
-
-2. Launch ORB_SLAM with the settings for the example sequence. You should have already uncompressed the vocabulary file (`/Data/ORBvoc.txt.tar.gz`)
-
-  *in ROS Fuerte*:
-
-	  roslaunch ExampleFuerte.launch
-
-	*in ROS Groovy or newer versions*:
-
-	  roslaunch ExampleGroovyHydro.launch
-
-3. Once the ORB vocabulary has been loaded, play the rosbag (press space to start):
-
-		rosbag play --pause Example.bag
+	roslaunch orb_slam_usbcam.launch
 
 
 #6. The Settings File
