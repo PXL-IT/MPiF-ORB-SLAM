@@ -1,5 +1,6 @@
+This is a fork of the ORB-SLAM repository with some minor updates.
 
-# ORB-SLAM Monocular
+# MORB-SLAM Monocular
 
 This is a modified version of ORB-SLAM. The additional features contain:
 - Publishing of camera pose
