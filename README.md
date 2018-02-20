@@ -1,4 +1,4 @@
-This is a fork of the ORB-SLAM repository with some minor updates.
+**This is a fork of the ORB-SLAM repository with some minor updates to publish camera pose on a seperate rostopic.**
 
 # MORB-SLAM Monocular
 
